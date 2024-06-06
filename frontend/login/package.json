@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/svelte --watch",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker": "vite --port 8084 --host 0.0.0.0 --base=/svelte/"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",

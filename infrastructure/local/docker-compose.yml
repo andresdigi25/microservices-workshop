@@ -1,0 +1,61 @@
+services:
+  rundeck:
+    container_name: rundeck
+    build:
+      context: rundeck
+    volumes:
+      - ./rundeck/data:/home/rundeck/server/data
+    ports:
+      - 4440:4440
+
+  nginx:
+    container_name: nginx
+    image: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/proxy.conf:/etc/nginx/proxy.conf
+      - ./nginx/html:/usr/share/nginx/html
+    ports:
+      - 80:80
+
+  api-a:
+    container_name: api-a
+    build:
+      context: ../../backend/SERVICE_A
+    ports:
+      - 5000:5000
+
+  api-b:
+    container_name: api-b
+    build:
+      context: ../../backend/SERVICE_B
+    ports:
+      - 5001:5001
+
+  app-a:
+    container_name: app-a
+    build:
+      context: ../../frontend/app-a
+    ports:
+      - 8081:8081
+
+  app-b:
+    container_name: app-b
+    build:
+      context: ../../frontend/app-b
+    ports:
+      - 8082:8082
+
+  app-c:
+    container_name: app-c
+    build:
+      context: ../../frontend/app-c
+    ports:
+      - 8083:8083
+
+  login:
+    container_name: login
+    build:
+      context: ../../frontend/login
+    ports:
+      - 8084:8084
