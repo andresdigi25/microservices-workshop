@@ -20,9 +20,9 @@ export class PageAComponent {
   constructor(private servicea: ServiceAService) { }
 
   ngOnInit() {
-    this.servicea.getProductsMini().then((data) => {
-      this.data = data;
-    });
+    this.servicea.getTodos().subscribe((data) => {
+      this.data = data
+    })
   }
 
 }
