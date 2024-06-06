@@ -1,0 +1,28 @@
+<p-panel header="App a" [toggleable]="true">
+
+  <a href="/app-b/home" rel="noopener noreferrer" class="p-button font-bold">Go to App b</a><br><br>
+  <a href="/app-c/home" rel="noopener noreferrer" class="p-button font-bold">Go to App c</a><br><br>
+
+  <a href="/svelte/non-sso-login" target="_blank" rel="noopener noreferrer" class="p-button-link font-bold">
+    Log out
+  </a>
+</p-panel>
+<br>
+<p-table [value]="data" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-p>
+    <tr>
+      <td>{{ p.code }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.category }}</td>
+      <td>{{ p.quantity }}</td>
+    </tr>
+  </ng-template>
+</p-table>
