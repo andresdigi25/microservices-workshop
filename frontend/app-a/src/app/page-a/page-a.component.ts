@@ -3,6 +3,7 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ServiceAService } from '../services/service-a.service';
+import {addStringToDate} from 'demo-angular-pycon'
 
 @Component({
   selector: 'app-page-a',
@@ -20,7 +21,7 @@ export class PageAComponent {
   ngOnInit() {
     this.servicea.getTodos().subscribe((data : any) => {
       this.data = Object.keys(data).map((key) => {
-        return {task: data[key].task, id: data[key].id, date: data[key].date}
+        return {task: data[key].task, id: data[key].id, date: addStringToDate(data[key].date)}
       })
     })
   }
