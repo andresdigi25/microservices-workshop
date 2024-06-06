@@ -11,18 +11,16 @@
 <p-table [value]="data" [tableStyle]="{ 'min-width': '50rem' }">
   <ng-template pTemplate="header">
     <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Quantity</th>
+      <th>id</th>
+      <th>email</th>
+      <th>date</th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-p>
+  <ng-template pTemplate="body" let-todo>
     <tr>
-      <td>{{ p.code }}</td>
-      <td>{{ p.name }}</td>
-      <td>{{ p.category }}</td>
-      <td>{{ p.quantity }}</td>
+      <td>{{ todo.id }}</td>
+      <td>{{ todo.email }}</td>
+      <td>{{ todo.date }}</td>
     </tr>
   </ng-template>
 </p-table>

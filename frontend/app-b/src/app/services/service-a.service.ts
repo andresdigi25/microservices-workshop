@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Data } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ export class ServiceAService {
   }
 
   getUsers(){
-    return this.http.get<Data[]>('/api-b/users')
+    return this.http.get('/api-b/users')
   }
 
 }

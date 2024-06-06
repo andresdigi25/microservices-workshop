@@ -3,7 +3,6 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ServiceAService } from '../services/service-a.service';
-import { Data } from '../domain/data';
 
 
 @Component({
@@ -15,13 +14,15 @@ import { Data } from '../domain/data';
 })
 export class PageAComponent {
 
-  data!: Data[];
+  data!: any;
 
   constructor(private servicea: ServiceAService) { }
 
   ngOnInit() {
-    this.servicea.getUsers().subscribe((data) => {
-      this.data = data
+    this.servicea.getUsers().subscribe((data : any) => {
+      this.data = Object.keys(data).map((key) => {
+        return {email: data[key].email, id: data[key].id, date: data[key].date}
+      })
     })
   }
 
