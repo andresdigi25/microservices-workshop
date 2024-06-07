@@ -4,6 +4,11 @@ import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ServiceAService } from '../services/service-a.service';
 
+interface Data {
+  email: string
+  id: string
+  date: string
+}
 
 @Component({
   selector: 'app-page-a',
@@ -14,7 +19,7 @@ import { ServiceAService } from '../services/service-a.service';
 })
 export class PageAComponent {
 
-  data!: any;
+  data!: Data[];
 
   constructor(private servicea: ServiceAService) { }
 
