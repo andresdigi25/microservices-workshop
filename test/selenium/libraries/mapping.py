@@ -1,7 +1,9 @@
 import os
 
 environment = {'qa': 'http://host.docker.internal/svelte/non-sso-login',
-               'uat': 'http://host.docker.internal/svelte/non-sso-login'}
+                   'api-a': 'http://host.docker.internal/api-a/todos',
+               'api-b': 'http://host.docker.internal/api-b/users',
+               'api-c': 'http://host.docker.internal/api-b/users'}
 
 
 def map_environment():

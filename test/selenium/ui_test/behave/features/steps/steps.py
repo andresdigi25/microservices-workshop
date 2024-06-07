@@ -32,3 +32,11 @@ class LoginSteps(EnvironmentSetup):
     def step_impl(self):
         self.login.click_on_app_c()
         allure.attach(self.driver.get_screenshot_as_png(), name="App_c.png", attachment_type=AttachmentType.PNG)
+
+    @given(u'Open the api')
+    def step_impl(self):
+        self.url = mapping.map_environment()
+        self.driver.get(self.url)
+        self.login = Login(self.driver)
+        self.login.load()
+        allure.attach(self.driver.get_screenshot_as_png(), name="Goto_api.png", attachment_type=AttachmentType.PNG)
