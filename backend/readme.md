@@ -6,3 +6,6 @@ docker run -p 5001:5001 service_b
 
 docker build -t service_c .
 docker run -p 5002:5002 service_c
+
+docker build -t service_login .
+docker run -p 5003:5003 service_login
