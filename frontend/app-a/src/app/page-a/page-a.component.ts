@@ -5,6 +5,12 @@ import { TableModule } from 'primeng/table';
 import { ServiceAService } from '../services/service-a.service';
 import {addStringToDate} from 'demo-angular-pycon'
 
+interface Data {
+  task: string
+  id: string
+  date: string
+}
+
 @Component({
   selector: 'app-page-a',
   standalone: true,
@@ -14,7 +20,7 @@ import {addStringToDate} from 'demo-angular-pycon'
 })
 export class PageAComponent {
 
-  data!: any;
+  data!: Data[];
 
   constructor(private servicea: ServiceAService) { }
 
