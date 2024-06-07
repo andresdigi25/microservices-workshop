@@ -22,4 +22,10 @@ RUN mv chromedriver /usr/local/bin/
 
 USER rundeck
 
+COPY test/selenium/requirements.txt .
+
+RUN python3 -m venv /home/rundeck/selenium-env &&  \
+    source /home/rundeck/selenium-env/bin/activate && \
+    pip install -r requirements.txt
+
 EXPOSE 4440

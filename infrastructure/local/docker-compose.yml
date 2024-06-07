@@ -2,9 +2,11 @@ services:
   rundeck:
     container_name: rundeck
     build:
-      context: rundeck
+      context: ../../
+      dockerfile: infrastructure/local/rundeck/Dockerfile
     volumes:
       - ./rundeck/data:/home/rundeck/server/data
+      - ../../test/selenium:/home/rundeck/selenium-test
     ports:
       - 4440:4440
 
@@ -17,6 +19,8 @@ services:
       - ./nginx/html:/usr/share/nginx/html
     ports:
       - 80:80
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   api-a:
     container_name: api-a
@@ -24,6 +28,8 @@ services:
       context: ../../backend/SERVICE_A
     ports:
       - 5000:5000
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   api-b:
     container_name: api-b
@@ -31,6 +37,8 @@ services:
       context: ../../backend/SERVICE_B
     ports:
       - 5001:5001
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   app-a:
     container_name: app-a
@@ -38,6 +46,8 @@ services:
       context: ../../frontend/app-a
     ports:
       - 8081:8081
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   app-b:
     container_name: app-b
@@ -45,6 +55,8 @@ services:
       context: ../../frontend/app-b
     ports:
       - 8082:8082
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   app-c:
     container_name: app-c
@@ -52,6 +64,8 @@ services:
       context: ../../frontend/app-c
     ports:
       - 8083:8083
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   login:
     container_name: login
@@ -59,3 +73,5 @@ services:
       context: ../../frontend/login
     ports:
       - 8084:8084
+    extra_hosts:
+      - host.docker.internal:host-gateway
