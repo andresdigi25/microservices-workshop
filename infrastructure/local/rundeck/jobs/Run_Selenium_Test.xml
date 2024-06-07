@@ -1,0 +1,31 @@
+<joblist>
+  <job>
+    <defaultTab>output</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>10c87f0e-8e09-413f-b2cf-9a96ea81d0b3</id>
+    <loglevel>INFO</loglevel>
+    <name>Run Selenium Test</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <script><![CDATA[#!/bin/bash
+
+cd /home/rundeck/test/selenium && \
+source /home/rundeck/selenium-env/bin/activate && \
+export BROWSER_NAME=chrome && \
+export EXECUTION_TYPE=local && \
+export USER_NAME=pinga && \
+export PASSWORD=pinga && \
+export ENV_NAME=qa && behave ./ui_test/behave/features/ui.feature && \
+export ENV_NAME=api-a && behave ./ui_test/behave/features/api.feature && \
+export ENV_NAME=api-b && behave ./ui_test/behave/features/api.feature && \
+export ENV_NAME=api-c && behave ./ui_test/behave/features/api.feature]]></script>
+        <scriptargs />
+      </command>
+    </sequence>
+    <uuid>10c87f0e-8e09-413f-b2cf-9a96ea81d0b3</uuid>
+  </job>
+</joblist>

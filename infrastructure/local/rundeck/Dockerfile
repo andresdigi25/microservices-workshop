@@ -6,10 +6,11 @@ ENV RUNDECK_SERVER_FORWARDED true
 USER root
 
 RUN apt-get update
-RUN apt-get install -y curl unzip python3 python3-pip python3.10-venv libgbm-dev libasound2 libatk-bridge2.0-0 libgtk-4-1 libnss3 xdg-utils wget
+RUN apt-get install -y csvtool curl unzip python3 python3-pip python3.10-venv libgbm-dev libasound2 libatk-bridge2.0-0 libgtk-4-1 libnss3 xdg-utils wget
 
 RUN wget -q -O chrome-linux64.zip https://bit.ly/chrome-linux64-121-0-6167-85
 RUN wget -q -O chromedriver-linux64.zip https://bit.ly/chromedriver-linux64-121-0-6167-85
+RUN wget -q -O apache-jmeter-5.6.3.zip https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.zip
 
 RUN unzip chrome-linux64.zip
 RUN rm chrome-linux64.zip
@@ -19,6 +20,11 @@ RUN ln -s /opt/chrome/chrome /usr/local/bin/google-chrome
 RUN unzip -j chromedriver-linux64.zip chromedriver-linux64/chromedriver
 RUN rm chromedriver-linux64.zip
 RUN mv chromedriver /usr/local/bin/
+
+RUN unzip apache-jmeter-5.6.3.zip
+RUN rm apache-jmeter-5.6.3.zip
+RUN mv apache-jmeter-5.6.3 /opt/jmeter/
+RUN ln -s /opt/jmeter/bin/jmeter /usr/local/bin/jmeter
 
 USER rundeck
 
