@@ -8,7 +8,7 @@
     </TestPlan>
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
-        <stringProp name="ThreadGroup.num_threads">${__P(threads_0,1)}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threads_0,10)}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${__P(rampup_0,1)}</stringProp>
         <stringProp name="ThreadGroup.duration">${__P(duration_0,420)}</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>

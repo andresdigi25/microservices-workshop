@@ -7,7 +7,7 @@ class Login:
     def __init__(self, driver):
         self.driver = driver
         self.user_txt = "//*[@name='Username']"
-        self.user_password_txt = "//*[@name='password']"
+        self.user_password_txt = "//*[@name='passwords']"
         self.sign_in_button = "//*[@role='button']"
         self.app_b = "//*[@href='/app-b/home']"
         self.app_c = "//*[@href='/app-c/home']"

@@ -55,7 +55,7 @@
                 <Input
                     bind:value={password}
                     type="password"
-                    name="password"
+                    name="passwords"
                     placeholder="•••••"
                     required
                     on:keydown={(e) => {
