@@ -4,12 +4,13 @@ import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ServiceAService } from '../services/service-a.service';
 import { Data } from '../domain/data';
+import { DemoAngularPyconComponent } from 'demo-angular-pycon';
 
 
 @Component({
   selector: 'app-page-a',
   standalone: true,
-  imports: [ButtonModule, PanelModule, TableModule],
+  imports: [ButtonModule, PanelModule, TableModule, DemoAngularPyconComponent],
   templateUrl: './page-a.component.html',
   styleUrl: './page-a.component.css'
 })
