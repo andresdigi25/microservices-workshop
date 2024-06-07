@@ -3,7 +3,7 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ServiceAService } from '../services/service-a.service';
-import {addStringToDate} from 'demo-angular-pycon'
+import {DemoAngularPyconComponent, addStringToDate} from 'demo-angular-pycon'
 
 interface Data {
   task: string
@@ -14,7 +14,7 @@ interface Data {
 @Component({
   selector: 'app-page-a',
   standalone: true,
-  imports: [ButtonModule, PanelModule, TableModule],
+  imports: [ButtonModule, PanelModule, TableModule, DemoAngularPyconComponent],
   templateUrl: './page-a.component.html',
   styleUrl: './page-a.component.css'
 })

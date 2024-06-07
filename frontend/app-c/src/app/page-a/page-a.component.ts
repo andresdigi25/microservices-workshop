@@ -3,9 +3,14 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ServiceAService } from '../services/service-a.service';
-import { Data } from '../domain/data';
 import { DemoAngularPyconComponent } from 'demo-angular-pycon';
 
+
+interface Data {
+  email: string,
+  login_timestamps: string[],
+  is_online: boolean,
+}
 
 @Component({
   selector: 'app-page-a',
@@ -21,9 +26,11 @@ export class PageAComponent {
   constructor(private servicea: ServiceAService) { }
 
   ngOnInit() {
-    this.servicea.getProductsMini().then((data) => {
-      this.data = data;
-    });
+    this.servicea.getTrackers().subscribe((data : any) => {
+      this.data = Object.keys(data).map((key) => {
+        return {email: data[key].email, login_timestamps: data[key].login_timestamps, is_online: data[key].is_online}
+      })
+    })
   }
 
 }
