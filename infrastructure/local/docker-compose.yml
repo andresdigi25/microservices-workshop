@@ -49,6 +49,15 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
 
+  api-login:
+    container_name: api-login
+    build:
+      context: ../../backend/SERVICE_LOGIN
+    ports:
+      - 5003:5003
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
   app-a:
     container_name: app-a
     build:
