@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "62c390a0-1c40-46dc-b478-b9ffd06f6484",
+		"name": "api-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25329536"
+	},
+	"item": [
+		{
+			"name": "api-a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api-a/todos",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api-a",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api-b",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api-b/users",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api-b",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

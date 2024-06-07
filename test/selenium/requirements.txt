@@ -1,0 +1,16 @@
+allure-behave==2.8.36
+allure-python-commons==2.8.36
+allure-pytest==2.8.36
+behave==1.2.6
+chardet==3.0.4
+Click==7.1.2
+ConfigArgParse==1.1
+importlib-metadata==1.5.0
+Jinja2==3.0
+MarkupSafe==2.0.0rc2
+parse==1.15.0
+parse-type==0.5.2
+selenium==4.20.0
+six==1.14.0
+urllib3==1.26.18
+webdriver-manager==4.0.1
