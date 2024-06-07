@@ -6,9 +6,11 @@ services:
       dockerfile: infrastructure/local/rundeck/Dockerfile
     volumes:
       - ./rundeck/data:/home/rundeck/server/data
-      - ../../test/selenium:/home/rundeck/selenium-test
+      - ../../test:/home/rundeck/test
     ports:
       - 4440:4440
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   nginx:
     container_name: nginx

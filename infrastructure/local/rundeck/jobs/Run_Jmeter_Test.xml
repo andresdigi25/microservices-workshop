@@ -1,0 +1,24 @@
+<joblist>
+  <job>
+    <defaultTab>output</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>7eb59537-fc8b-43aa-accc-8cf72a2ecdbd</id>
+    <loglevel>INFO</loglevel>
+    <name>Run Jmeter Test</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <script><![CDATA[#!/bin/bash
+
+cd /home/rundeck/test/jmeter && \
+jmeter -n -t api_test.jmx -l results.csv && \
+csvtool readable results.csv]]></script>
+        <scriptargs />
+      </command>
+    </sequence>
+    <uuid>7eb59537-fc8b-43aa-accc-8cf72a2ecdbd</uuid>
+  </job>
+</joblist>
