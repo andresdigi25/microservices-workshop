@@ -5,6 +5,7 @@ import traceback
 import warnings
 from functools import wraps
 import json_logging
+from datetime import date
 
 log_level = os.getenv('LOG_LEVEL', 'INFO')
 
@@ -20,6 +21,12 @@ logger.addHandler(logging.StreamHandler(sys.stdout))
 
 json_logging.init_non_web(enable_json=True)
 
+
+def process_output(input):
+    for i, (key, value) in enumerate(input.items(), start=1):
+        value['id'] = i
+        value['date'] = str(date.today())
+    return input
 
 def set_level(level):
     logger.setLevel(level=level)

@@ -1,4 +1,4 @@
-from service import process_output
+from pycon_demo_library_python.util import process_output
 from model import USERS
 from logger import logger as logging
 import os
