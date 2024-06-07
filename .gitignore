@@ -162,4 +162,5 @@ cython_debug/
 .idea/
 
 infrastructure/local/rundeck/data/grailsdb.mv.db
+infrastructure/local/rundeck/data/grailsdb.trace.db
 test/jmeter/results.csv

@@ -5,7 +5,6 @@ services:
       context: ../../
       dockerfile: infrastructure/local/rundeck/Dockerfile
     volumes:
-      - ./rundeck/data:/home/rundeck/server/data
       - ../../test:/home/rundeck/test
     ports:
       - 4440:4440

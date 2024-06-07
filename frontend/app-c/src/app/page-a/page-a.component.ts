@@ -10,6 +10,8 @@ interface Data {
   email: string,
   login_timestamps: string[],
   is_online: boolean,
+  id: string,
+  date: string
 }
 
 @Component({
@@ -26,9 +28,9 @@ export class PageAComponent {
   constructor(private servicea: ServiceAService) { }
 
   ngOnInit() {
-    this.servicea.getTrackers().subscribe((data : any) => {
+    this.servicea.getTrackers().subscribe((data: any) => {
       this.data = Object.keys(data).map((key) => {
-        return {email: data[key].email, login_timestamps: data[key].login_timestamps, is_online: data[key].is_online}
+        return { email: data[key].email, login_timestamps: data[key].login_timestamps, is_online: data[key].is_online, id: data[key].id, date: data[key].date }
       })
     })
   }
