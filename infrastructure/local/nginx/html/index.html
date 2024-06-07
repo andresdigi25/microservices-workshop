@@ -44,12 +44,12 @@
                 <path
                   id="Vector"
                   d="M435.922 191.941C476.534 191.941 509.458 159.018 509.458 118.405C509.458 77.7923 476.534 44.869 435.922 44.869C395.309 44.869 362.385 77.7923 362.385 118.405C362.385 159.018 395.309 191.941 435.922 191.941Z"
-                  fill="#A0616A"
+                  fill="#fdddca"
                 />
                 <path
                   id="Vector_2"
                   d="M381.036 155.173C381.036 155.173 394.891 259.616 373.576 271.339C352.261 283.062 500.399 284.128 500.399 284.128C500.399 284.128 467.361 193.54 482.281 165.831L381.036 155.173Z"
-                  fill="#A0616A"
+                  fill="#fdddca"
                 />
                 <path
                   id="Vector_3"
@@ -271,5 +271,15 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      var currentColor = '#fdddca'
+      setInterval(() => {
+        currentColor = currentColor == '#A0616A' ? '#fdddca' : '#A0616A';
+
+        document.getElementById("Vector").setAttribute("fill", currentColor)
+        document.getElementById("Vector_2").setAttribute("fill", currentColor)
+      }, 2000)
+    </script>
   </body>
 </html>
