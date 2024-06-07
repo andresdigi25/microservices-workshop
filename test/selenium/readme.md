@@ -20,8 +20,8 @@ This project was created to run tests using Selenium tool
    2. `export BROWSER_NAME=chrome`
    3. `export LOAD_BALANCER_NAME=http://localhost:4444`
    4. `export EXECUTION_TYPE=local`
-   5. `export USER_NAME=test`
-   6. `export PASSWORD=test`
+   5. `export USER_NAME=pinga`
+   6. `export PASSWORD=pinga`
    7. `pip install -r requirements.txt`
    8. Run the next command in the console:
 

@@ -1,5 +1,5 @@
 import time
-from libraries import mapping, mouse, forms
+from libraries import mapping, mouse, forms, locators
 
 
 class Login:
@@ -11,6 +11,7 @@ class Login:
         self.sign_in_button = "//*[@role='button']"
         self.app_b = "//*[@href='/app-b/home']"
         self.app_c = "//*[@href='/app-c/home']"
+        self.table = "//*[@role='table']"
 
     def load(self):
         url = mapping.map_environment()
@@ -25,6 +26,7 @@ class Login:
 
     def click_on_sign_in_button(self):
         mouse.click_on_element(self, "XPATH", self.sign_in_button)
+        locators.wait_until_visibility_of_element(self, "XPATH", self.table)
 
     def click_on_app_b(self):
         mouse.click_on_element(self, "XPATH", self.app_b)
