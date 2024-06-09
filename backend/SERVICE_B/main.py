@@ -1,6 +1,6 @@
 from pycon_demo_library_python.util import process_output
 from model import USERS
-from logger import logger as logging
+from pycon_demo_library_python.util import logger as logging
 import os
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
@@ -45,7 +45,6 @@ class User(Resource):
 class UserList(Resource):
     def get(self):
         logging.info("returning all users")
-        logging.warn(f"Calling todos")
         return process_output(USERS)
 
     def post(self):
