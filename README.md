@@ -1,6 +1,6 @@
-# Project Title
+# MONOLITH TO MICROSERVICES
 
-Pycon Monolith to microservices journey
+Pycon Monolith to microservices journey project with 4 services.
 ![Project Design](/assets/design.png)
 
 ## Description
