@@ -1,6 +1,7 @@
 # Project Title
 
-One Paragraph of project description goes here
+Pycon Monolith to microservices journey
+![Project Design](/assets/design.png)
 
 ## Description
 
@@ -20,3 +21,4 @@ Give a more detailed explanation about your project. Include the main features a
 
 ```bash
 docker-compose up --build 
+
